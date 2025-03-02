@@ -10,24 +10,24 @@ let app=express()
 
 function getting(req,res,next){
     console.log(`Method: ${req.method}, URL: ${req.url}`)
-    // req.name="harsha"
     next()
 }
 app.use(getting)
 
 app.get("/name",(req,res)=>{
-console.log(req.params);
-
-    res.send(req.params)
+// console.log(req.params.name);
+    res.send("it is get method")
 })
-
-
-app.get("/greeting",(req,res)=>{
-    res.send("hello")
+app.post("/greeting",(req,res)=>{
+    res.send("hello this is post ")
     
 })
 
 app.listen(3004,()=>{
-    console.log("it running")
+    console.log("it running port is 3004")
 
 })
+
+
+// http://localhost:3004/greeting
+// http://localhost:3004/name

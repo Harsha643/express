@@ -20,5 +20,8 @@ app.get('/user/:id', (req, res) => {
 });
 
 app.listen(3005, () => {
-  console.log('Server listening on port 3000');
+  console.log('Server listening on port 3005');
 });
+
+
+// url:http://localhost:3005/user/123?age=30

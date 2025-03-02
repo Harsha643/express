@@ -11,15 +11,22 @@ app.use(express.json());
 app.post('/submit', (req, res) => {
   let name = req.body.name;
   console.log(req.body,req.headers)
-  let authorizationHeader = req.headers.pass;
+  let password = req.headers.pass;
 
-  if (!name || !authorizationHeader) {
+  if (!name || !password) {
     return res.send({ error: 'Name and Authorization header are required.' });
   }
 
-  res.send(`Received name: ${name}, Authorization: ${authorizationHeader}`);
+  res.send(`Received name: ${name}, Authorization: ${password}`);
 });
 
 app.listen(3003, () => {
-  console.log('Server listening on port 3000');
+  console.log('Server listening on port 3003');
 });
+
+
+
+
+//http://localhost:3003/submit
+// in header write the key pass : your password  content-type : application/json
+// in body write the {"name" :"your name"}
